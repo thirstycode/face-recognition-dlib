@@ -11,4 +11,4 @@
 Result:
 	The Faces Detected With This Error Can't Be Compared To Database Due To Above Reasons
 
-***Good Camera Can Mimmize This Error**
+***Good Camera Can Minimize This Error**
