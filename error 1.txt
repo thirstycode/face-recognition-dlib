@@ -1,0 +1,14 @@
+-------this error occurs due to not possible of encoding of face due to ------
+--------------------------------------------------------
+---------lightning conditions not supportive------------
+----------------------OR--------------------------------
+---------------face is tilted too much -----------------
+----------------------OR -------------------------------
+------------------face size is too small---------------- 
+----------------------OR -------------------------------
+
+
+Result:
+	The Faces Detected With This Error Can't Be Compared To Database Due To Above Reasons
+
+***Good Camera Can Mimmize This Error**
