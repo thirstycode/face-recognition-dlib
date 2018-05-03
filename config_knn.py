@@ -3,19 +3,10 @@
 # ip address or link of live stream to catch
 ip_address = "http://192.168.43.1:8080/video"
 
-# <----tolerance------>
-# tolerance is strictness of recognizing Faces
-# default value is 0.6
-# lowering the tolerance can make face recognition accurate
-# but lowering it can make something like no match if face in image are slightly different
-# making it high can make recognize faces nicely but lowers the accuracy
-# suggestion : only change tolerance value if you need to experiment
-# keep it to default only
-# If you are getting multiple matches for the same person, it might be that the people in your photos look very similar and a lower tolerance value is needed to make face comparisons more strict.
-# The default tolerance value is 0.6 and lower numbers make face comparisons more strict:
-# 0.6 is typical best performance.
+# <--------distance_threshold is same as tolerance---->
+# only difference is theshold is used in knn while tolerance is used in normal model
 
-tolerance = 0.6
+distance_threshold = 0.6
 
 # <----number_of_times_to_upsample –---------->
 # number_of_times_to_upsample – How many times to upsample the image looking for faces. Higher numbers find smaller faces.
@@ -33,8 +24,3 @@ number_of_times_to_upsample = 2
 # i have made it 2 to make it better
 
 num_jitters=2
-
-# <--------distance_threshold is same as tolerance---->
-# only difference is theshold is used in knn while tolerance is used in normal model
-
-distance_threshold = 0.6

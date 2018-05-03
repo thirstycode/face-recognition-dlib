@@ -5,6 +5,10 @@ import os
 import numpy as np
 import sys
 import time
+from config import number_of_times_to_upsample
+from config import num_jitters
+from config import tolerance
+
 
 unknown_image_path = "214.jpg"
 
@@ -94,13 +98,11 @@ unknown_image = face_recognition.load_image_file(unknown_image_path)
 # Find all the faces in the image using the default HOG-based model.
 # This method is fairly accurate, but not as accurate as the CNN model and not GPU accelerated.
 # See also: find_faces_in_picture_cnn.py
-face_locations = face_recognition.face_locations(unknown_image)
+face_locations = face_recognition.face_locations(unknown_image,number_of_times_to_upsample=number_of_times_to_upsample)
 
 try:
-    # biden_face_encoding = face_recognition.face_encodings(biden_image)[0]
-    # manushi_face_encoding = face_recognition.face_encodings(manushi_image)[0]
     for face in faces:
-        face_encoding = face_recognition.face_encodings(face)[0]
+        face_encoding = face_recognition.face_encodings(face,num_jitters=num_jitters)[0]
         face_encoding_list.append(face_encoding)
 except IndexError:
     print("I wasn't able to locate any faces in at least one of the images. Check the image files. Aborting...")
@@ -118,10 +120,10 @@ for face_location in face_locations:
 
     # You can access the actual face itself like this:
     face_image = unknown_image[top:bottom, left:right]
-    face_encoding1 = face_recognition.face_encodings(face_image)
+    face_encoding1 = face_recognition.face_encodings(face_image,num_jitters=num_jitters)
     if len(face_encoding1) > 0 :
         face_encoding = face_encoding1[0]
-        results = face_recognition.compare_faces(face_encoding_list, face_encoding)
+        results = face_recognition.compare_faces(face_encoding_list, face_encoding,tolerance=tolerance)
         if True in results:
             index1 = results.index(True)
             colour_2 = colour_f(status[index1])

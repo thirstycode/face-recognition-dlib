@@ -6,6 +6,9 @@ import os
 import numpy as np
 import sys
 from config import ip_address
+from config import number_of_times_to_upsample
+from config import num_jitters
+from config import tolerance
 
 subjects = []
 status = []
@@ -92,10 +95,10 @@ def show_result(frame):
     global subjects
     global status
     global face_encoding_list
-    face_locations = face_recognition.face_locations(frame)
+    face_locations = face_recognition.face_locations(frame,number_of_times_to_upsample=number_of_times_to_upsample)
     try:
         for face in faces:
-            face_encoding = face_recognition.face_encodings(face)[0]
+            face_encoding = face_recognition.face_encodings(face,num_jitters=num_jitters)[0]
             face_encoding_list.append(face_encoding)
     except IndexError:
         print("I wasn't able to locate any faces in at least one of the images. Check the image files. Aborting...")
@@ -110,10 +113,10 @@ def show_result(frame):
 
         # You can access the actual face itself like this:
         face_image = frame[top:bottom, left:right]
-        face_encoding1 = face_recognition.face_encodings(face_image)
+        face_encoding1 = face_recognition.face_encodings(face_image,num_jitters=num_jitters)
         if len(face_encoding1) > 0 :
             face_encoding = face_encoding1[0]
-            results = face_recognition.compare_faces(face_encoding_list, face_encoding)
+            results = face_recognition.compare_faces(face_encoding_list, face_encoding, tolerance = tolerance)
             if True in results:
                 index1 = results.index(True)
                 colour_2 = colour_f(status[index1])
@@ -130,6 +133,8 @@ def show_result(frame):
             draw_rectangle2(img, (left,top,right,bottom),(255,255,255))
             draw_text(img,"Error 1" ,left, top-5)
 
+    save(frame,"before")
+    save(img,"after")
     cv2.imshow("face_detected",img)
     cv2.waitKey(0)
     cv2.destroyAllWindows()
