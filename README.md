@@ -23,6 +23,7 @@ built with deep learning. This is revised model of [face_recognition](https://gi
     - Normal model : It is normal model that use 1 image of user to train the face recognition.
     - Knn model (Works on Euclidean distance) : Uses as many as images to train the model , so that it can be better in accuracy. This model is 2-4 times slower than normal model.
   - There is status of every person's data . Vip status persons will be shown in green & Blacklisted in red & undetected in white
+  - Have a look at error1.txt in errors folder before using normal model.
 ### How to add training data ? :
   - Normal Model : Add new folder in 'train-images' folder and name it as s3 , s4 etc etc (it depends on how much person's data you have added). Add only 1 image of person in respective folder and add name.txt having name and status.txt having status i.e vip/blacklisted.
   - Knn model : Add new folder in 'knn-train' folder , named as the person's name. Add as much as person's photo in respective folder and make status.txt
@@ -48,3 +49,15 @@ Make sure open image_test and give path to your image
 
 ## Live stream :
   - Insert live stream url in config.py/config_knn.py to use drone.py
+
+## Reports of images :
+  - All checked images are saved in 'reports' folder.
+
+## Improvements and futures : 
+  - Can be used with cuda of nvidia for parallel computation in gpu to have faster processing.
+  - Thus we can process whole video as processing will be accompanied by powerful nvidia graphic cards.
+### Special Thanks To : 
+  - [Adam Geitgey](https://github.com/ageitgey) who made face_recognition module to make things connecting with dlib.
+
+#### Issues:
+  - Feel free to post an issue
