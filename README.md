@@ -20,5 +20,5 @@ built with deep learning. This is revised model of [face_recognition](https://gi
 ```
 ### Note:
   - There are two models included in here. 1. Normal model 2. Knn model
-    - 1. Normal model : It is normal model that use 1 image of user to train the face recognition.
-    - 2. Knn model (Works on Euclidean distance) : Uses as many as images to train the model , so that it can be best accurate. This model is 2-4 times slower than normal model.
+    - Normal model : It is normal model that use 1 image of user to train the face recognition.
+    - Knn model (Works on Euclidean distance) : Uses as many as images to train the model , so that it can be better in accuracy. This model is 2-4 times slower than normal model.
