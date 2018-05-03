@@ -26,3 +26,19 @@ built with deep learning. This is revised model of [face_recognition](https://gi
 ### How to add training data ? :
   - Normal Model : Add new folder in 'train-images' folder and name it as s3 , s4 etc etc (it depends on how much person's data you have added). Add only 1 image of person in respective folder and add name.txt having name and status.txt having status i.e vip/blacklisted.
   - Knn model : Add new folder in 'knn-train' folder , named as the person's name. Add as much as person's photo in respective folder and make status.txt
+#### Execute It:
+```bash
+For normal model
+1. python3 webcam.py
+2. python3 drone.py
+```
+```bash
+For knn model
+1. python3 webcam_knn.py
+2. python3 drone_knn.py
+```
+```bash
+To check on image with normal model
+Make sure open image_test and give path to your image
+1. python3 image_test.py
+```
