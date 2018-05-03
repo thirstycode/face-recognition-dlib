@@ -10,7 +10,7 @@ from config import num_jitters
 from config import tolerance
 
 
-unknown_image_path = "214.jpg"
+unknown_image_path = "test.jpg"
 
 subjects = []
 status = []
