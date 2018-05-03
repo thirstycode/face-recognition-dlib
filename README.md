@@ -40,7 +40,7 @@ For knn model
 ```
 ```bash
 To check on image with normal model
-Make sure open image_test and give path to your image
+Make sure to open image_test and give path to your image
 1. python3 image_test.py
 ```
 ## Adjustments for best results:
