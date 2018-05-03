@@ -44,11 +44,11 @@ Make sure open image_test and give path to your image
 1. python3 image_test.py
 ```
 ## Adjustments for best results:
-  - Normal model : Edit variables in config.py (All the working of respective variables are given itself in config.py) 
-  - Knn model : Edit variables in config_knn.py (All the working of respective variables are given itself in config_knn.py) 
+  - Normal model : Edit variables in ```config.py``` (All the working of respective variables are given itself in config.py) 
+  - Knn model : Edit variables in ```config_knn.py``` (All the working of respective variables are given itself in config_knn.py) 
 
 ## Live stream :
-  - Insert live stream url in config.py/config_knn.py to use drone.py
+  - Insert live stream url in ```config.py```/```config_knn.py``` to use drone.py
 
 ## Reports of images :
   - All checked images are saved in 'reports' folder.
