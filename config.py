@@ -33,8 +33,3 @@ number_of_times_to_upsample = 2
 # i have made it 2 to make it better
 
 num_jitters=2
-
-# <--------distance_threshold is same as tolerance---->
-# only difference is theshold is used in knn while tolerance is used in normal model
-
-distance_threshold = 0.6
