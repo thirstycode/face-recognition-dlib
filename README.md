@@ -59,5 +59,5 @@ Make sure to open image_test and give path to your image
 ### Special Thanks To : 
   - [Adam Geitgey](https://github.com/ageitgey) who made face_recognition module to make things connecting with dlib.
 
-#### having issues in code? :
+#### Having issues in code? :
   - Feel free to create an issue in repo. I'll be happy to help you 😃
