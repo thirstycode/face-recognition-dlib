@@ -38,7 +38,10 @@ def train(train_dir, model_save_path=None, n_neighbors=None, knn_algo='ball_tree
                 with open(img_path,'r+') as name:
                     content = name.read()
                     content = content.lower()
-                    status.append(content)
+                    if "vip" in content:
+                        status.append("vip")
+                    if "blacklisted" in content:
+                        status.append("blacklisted")
 
             else :
                 print("- " + img_path)
